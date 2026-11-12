@@ -14,13 +14,12 @@ Two rules run through all of it:
 ## tezgah-lab
 
 *Tezgah* is Turkish for workbench. [**tezgah-lab**](https://github.com/aarmert/tezgah-lab) is the
-umbrella repo; the work lives in three repos that each stand on their own, with code, data and figures.
+umbrella repo; the work lives in two repos that each stand on their own, with code, data and figures.
 
 | Repo | What it is | Headline result |
 |---|---|---|
 | [**c031-ab-bootloader-stress**](https://github.com/aarmert/c031-ab-bootloader-stress) | An A/B bootloader for the NUCLEO-C031C6, reset at thousands of planned moments during a firmware update, from inside the chip and by an ESP32-S3 pulling NRST | **0 failures in 3103 trials** (95% upper bound 0.097%). The naive bootloader, as the negative control, booted a corrupt image in 11 of 20. |
-| [**f407-hil-bench**](https://github.com/aarmert/f407-hil-bench) | `bench.py`: flash, reset, serial, TOML test plans and self-recovery for the STM32F407 Discovery | `smoke`, `crash_recovery`, `measure` and `camera_blink` pass on the real board, and each fails when broken on purpose |
-| [**f407-camera-blink**](https://github.com/aarmert/f407-camera-blink) | Measuring an LED's blink frequency and duty cycle with a phone camera, frame by frame, against the board's own clock | 0.995 / 1.985 / 4.007 Hz for commanded 1 / 2 / 4 Hz; the board clock runs 0.5% slow |
+| [**f407-hil-bench**](https://github.com/aarmert/f407-hil-bench) | `bench.py`: flash, reset, serial, TOML test plans and self-recovery for the STM32F407 Discovery | `smoke`, `crash_recovery` and `measure` pass on the real board, and each fails when broken on purpose |
 
 Each repo has a "try it without hardware" section, so you can run it without a board.
 
@@ -55,7 +54,7 @@ interrupts and ring buffers, CRC, CAN, UART, SWD<br>
 **Hardware** Altium Designer from schematic to layout, SMD soldering under a microscope, photodiode
 and transimpedance amplifier front-ends, PWM and MOSFET stages, SPICE<br>
 **Measuring** oscilloscope, CAN bus analysis (PCAN-View), datasheet work, fault finding on real boards<br>
-**Host side** Python, [uv](https://docs.astral.sh/uv/), PowerShell, TOML test plans, ffmpeg for camera measurements<br>
+**Host side** Python, [uv](https://docs.astral.sh/uv/), PowerShell, TOML test plans<br>
 **Agents** Claude Code and opencode, driving the bench through `--json` output and an `AGENTS.md` per repo
 
 ## Also here
