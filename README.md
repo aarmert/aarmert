@@ -18,7 +18,7 @@ umbrella repo; the work lives in two repos that each stand on their own, with co
 
 | Repo | What it is | Headline result |
 |---|---|---|
-| [**c031-ab-bootloader-stress**](https://github.com/aarmert/c031-ab-bootloader-stress) | An A/B bootloader for the NUCLEO-C031C6, reset at thousands of planned moments during a firmware update, from inside the chip and by an ESP32-S3 pulling NRST | **0 failures in 3103 trials** (95% upper bound 0.097%). The naive bootloader, as the negative control, booted a corrupt image in 11 of 20. |
+| [**c031-ab-bootloader-stress**](https://github.com/aarmert/c031-ab-bootloader-stress) | An A/B bootloader for the NUCLEO-C031C6, reset at thousands of planned moments during a firmware update, from inside the chip and by an ESP32-S3 pulling NRST | **0 corrupt boots in 3103 reset-injected trials** on one board. The naive bootloader, as the negative control, booted a corrupt image in 11 of 20. |
 | [**f407-hil-bench**](https://github.com/aarmert/f407-hil-bench) | `bench.py`: flash, reset, serial, TOML test plans and self-recovery for the STM32F407 Discovery | `smoke`, `crash_recovery` and `measure` pass on the real board, and each fails when broken on purpose |
 
 Each repo has a "try it without hardware" section, so you can run it without a board.
